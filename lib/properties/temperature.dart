@@ -8,10 +8,6 @@ enum TEMPERATURE {
   fahrenheit,
   celsius,
   kelvin,
-  reamur,
-  romer,
-  delisle,
-  rankine,
 }
 
 class Temperature extends DoubleProperty<TEMPERATURE> {
@@ -32,14 +28,11 @@ class Temperature extends DoubleProperty<TEMPERATURE> {
             TEMPERATURE.fahrenheit: '°F',
             TEMPERATURE.celsius: '°C',
             TEMPERATURE.kelvin: 'K',
-            TEMPERATURE.reamur: '°Re',
-            TEMPERATURE.romer: '°Rø',
-            TEMPERATURE.delisle: '°De',
-            TEMPERATURE.rankine: '°R',
           },
-          conversionTree:
-              ConversionNode(name: TEMPERATURE.fahrenheit, children: [
-            ConversionNode(
+          conversionTree: ConversionNode(
+            name: TEMPERATURE.fahrenheit,
+            children: [
+              ConversionNode(
                 coefficientProduct: 1.8,
                 coefficientSum: 32.0,
                 name: TEMPERATURE.celsius,
@@ -48,33 +41,13 @@ class Temperature extends DoubleProperty<TEMPERATURE> {
                     coefficientSum: -273.15,
                     name: TEMPERATURE.kelvin,
                   ),
-                  ConversionNode(
-                    coefficientProduct: 5 / 4,
-                    name: TEMPERATURE.reamur,
-                  ),
-                  ConversionNode(
-                    coefficientProduct: 40 / 21,
-                    coefficientSum: -100 / 7,
-                    name: TEMPERATURE.romer,
-                  ),
-                  ConversionNode(
-                    coefficientProduct: -2 / 3,
-                    coefficientSum: 100,
-                    name: TEMPERATURE.delisle,
-                  ),
-                ]),
-            ConversionNode(
-              coefficientSum: -459.67,
-              name: TEMPERATURE.rankine,
-            ),
-          ]),
+                ],
+              ),
+            ],
+          ),
         );
 
   Unit get fahrenheit => getUnit(TEMPERATURE.fahrenheit);
   Unit get celsius => getUnit(TEMPERATURE.celsius);
   Unit get kelvin => getUnit(TEMPERATURE.kelvin);
-  Unit get reamur => getUnit(TEMPERATURE.reamur);
-  Unit get romer => getUnit(TEMPERATURE.romer);
-  Unit get delisle => getUnit(TEMPERATURE.delisle);
-  Unit get rankine => getUnit(TEMPERATURE.rankine);
 }

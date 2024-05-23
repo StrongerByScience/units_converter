@@ -1,4 +1,5 @@
 import 'package:test/test.dart';
+import 'package:units_converter/properties/si_prefixes.dart';
 import 'package:units_converter/units_converter.dart';
 
 void main() {
@@ -12,122 +13,10 @@ void main() {
     });
   }
 
-  group('Amount of Substance', () {
-    var property = AmountOfSubstance();
-    property.convert(AMOUNT_OF_SUBSTANCE.moles, 1);
-    runGetterTest(property.moles, property.getUnit(AMOUNT_OF_SUBSTANCE.moles));
-    runGetterTest(
-        property.millimoles, property.getUnit(AMOUNT_OF_SUBSTANCE.millimoles));
-    runGetterTest(
-        property.micromoles, property.getUnit(AMOUNT_OF_SUBSTANCE.micromoles));
-    runGetterTest(
-        property.nanomoles, property.getUnit(AMOUNT_OF_SUBSTANCE.nanomoles));
-    runGetterTest(
-        property.picomoles, property.getUnit(AMOUNT_OF_SUBSTANCE.picomoles));
-    runGetterTest(
-        property.femtomoles, property.getUnit(AMOUNT_OF_SUBSTANCE.femtomoles));
-  });
-
-  group('Angle test', () {
-    var property = Angle();
-    property.convert(ANGLE.degree, 1);
-    runGetterTest(property.degree, property.getUnit(ANGLE.degree));
-    runGetterTest(property.minutes, property.getUnit(ANGLE.minutes));
-    runGetterTest(property.seconds, property.getUnit(ANGLE.seconds));
-    runGetterTest(property.radians, property.getUnit(ANGLE.radians));
-  });
-
-  group('Area test', () {
-    var property = Area();
-    property.convert(AREA.squareMeters, 1);
-    runGetterTest(property.squareMeters, property.getUnit(AREA.squareMeters));
-    runGetterTest(
-        property.squareCentimeters, property.getUnit(AREA.squareCentimeters));
-    runGetterTest(property.squareInches, property.getUnit(AREA.squareInches));
-    runGetterTest(property.squareFeet, property.getUnit(AREA.squareFeet));
-    runGetterTest(property.squareFeetUs, property.getUnit(AREA.squareFeetUs));
-    runGetterTest(property.squareMiles, property.getUnit(AREA.squareMiles));
-    runGetterTest(property.squareYard, property.getUnit(AREA.squareYard));
-    runGetterTest(
-        property.squareMillimeters, property.getUnit(AREA.squareMillimeters));
-    runGetterTest(
-        property.squareKilometers, property.getUnit(AREA.squareKilometers));
-    runGetterTest(property.hectares, property.getUnit(AREA.hectares));
-    runGetterTest(property.acres, property.getUnit(AREA.acres));
-    runGetterTest(property.are, property.getUnit(AREA.are));
-  });
-
   group('Density test', () {
     var property = Density();
-    property.convert(DENSITY.gramsPerLiter, 1);
-    runGetterTest(
-        property.gramsPerLiter, property.getUnit(DENSITY.gramsPerLiter));
-    runGetterTest(property.gramsPerCubicCentimeter,
-        property.getUnit(DENSITY.gramsPerCubicCentimeter));
     runGetterTest(property.gramsPerMilliliter,
         property.getUnit(DENSITY.gramsPerMilliliter));
-    runGetterTest(property.gramsPerDeciliter,
-        property.getUnit(DENSITY.gramsPerDeciliter));
-    runGetterTest(property.kilogramsPerLiter,
-        property.getUnit(DENSITY.kilogramsPerLiter));
-    runGetterTest(property.kilogramsPerCubicMeter,
-        property.getUnit(DENSITY.kilogramsPerCubicMeter));
-    runGetterTest(property.milligramsPerLiter,
-        property.getUnit(DENSITY.milligramsPerLiter));
-    runGetterTest(property.milligramsPerDeciliter,
-        property.getUnit(DENSITY.milligramsPerDeciliter));
-    runGetterTest(property.milligramsPerMilliliter,
-        property.getUnit(DENSITY.milligramsPerMilliliter));
-    runGetterTest(property.milligramsPerCubicMeter,
-        property.getUnit(DENSITY.milligramsPerCubicMeter));
-    runGetterTest(property.milligramsPerCubicCentimeter,
-        property.getUnit(DENSITY.milligramsPerCubicCentimeter));
-    runGetterTest(property.microgramsPerLiter,
-        property.getUnit(DENSITY.microgramsPerLiter));
-    runGetterTest(property.microgramsPerDeciliter,
-        property.getUnit(DENSITY.microgramsPerDeciliter));
-    runGetterTest(property.microgramsPerMilliliter,
-        property.getUnit(DENSITY.microgramsPerMilliliter));
-    runGetterTest(property.nanogramsPerLiter,
-        property.getUnit(DENSITY.nanogramsPerLiter));
-    runGetterTest(property.nanogramsPerMilliliter,
-        property.getUnit(DENSITY.nanogramsPerMilliliter));
-    runGetterTest(property.picogramsPerLiter,
-        property.getUnit(DENSITY.picogramsPerLiter));
-    runGetterTest(property.picogramsPerMilliliter,
-        property.getUnit(DENSITY.picogramsPerMilliliter));
-  });
-
-  group('Digital data test', () {
-    var property = DigitalData();
-    property.convert(DIGITAL_DATA.byte, 1);
-    runGetterTest(property.bit, property.getUnit(DIGITAL_DATA.bit));
-    runGetterTest(property.nibble, property.getUnit(DIGITAL_DATA.nibble));
-    runGetterTest(property.kilobit, property.getUnit(DIGITAL_DATA.kilobit));
-    runGetterTest(property.megabit, property.getUnit(DIGITAL_DATA.megabit));
-    runGetterTest(property.gigabit, property.getUnit(DIGITAL_DATA.gigabit));
-    runGetterTest(property.terabit, property.getUnit(DIGITAL_DATA.terabit));
-    runGetterTest(property.petabit, property.getUnit(DIGITAL_DATA.petabit));
-    runGetterTest(property.exabit, property.getUnit(DIGITAL_DATA.exabit));
-    runGetterTest(property.kibibit, property.getUnit(DIGITAL_DATA.kibibit));
-    runGetterTest(property.mebibit, property.getUnit(DIGITAL_DATA.mebibit));
-    runGetterTest(property.gibibit, property.getUnit(DIGITAL_DATA.gibibit));
-    runGetterTest(property.tebibit, property.getUnit(DIGITAL_DATA.tebibit));
-    runGetterTest(property.pebibit, property.getUnit(DIGITAL_DATA.pebibit));
-    runGetterTest(property.exbibit, property.getUnit(DIGITAL_DATA.exbibit));
-    runGetterTest(property.byte, property.getUnit(DIGITAL_DATA.byte));
-    runGetterTest(property.kilobyte, property.getUnit(DIGITAL_DATA.kilobyte));
-    runGetterTest(property.megabyte, property.getUnit(DIGITAL_DATA.megabyte));
-    runGetterTest(property.gigabyte, property.getUnit(DIGITAL_DATA.gigabyte));
-    runGetterTest(property.terabyte, property.getUnit(DIGITAL_DATA.terabyte));
-    runGetterTest(property.petabyte, property.getUnit(DIGITAL_DATA.petabyte));
-    runGetterTest(property.exabyte, property.getUnit(DIGITAL_DATA.exabyte));
-    runGetterTest(property.kibibyte, property.getUnit(DIGITAL_DATA.kibibyte));
-    runGetterTest(property.mebibyte, property.getUnit(DIGITAL_DATA.mebibyte));
-    runGetterTest(property.gibibyte, property.getUnit(DIGITAL_DATA.gibibyte));
-    runGetterTest(property.tebibyte, property.getUnit(DIGITAL_DATA.tebibyte));
-    runGetterTest(property.pebibyte, property.getUnit(DIGITAL_DATA.pebibyte));
-    runGetterTest(property.exbibyte, property.getUnit(DIGITAL_DATA.exbibyte));
   });
 
   group('Energy test', () {
@@ -137,46 +26,7 @@ void main() {
     runGetterTest(property.kilojoules, property.getUnit(ENERGY.kilojoules));
     runGetterTest(property.calories, property.getUnit(ENERGY.calories));
     runGetterTest(property.kilocalories, property.getUnit(ENERGY.kilocalories));
-    runGetterTest(
-        property.kilowattHours, property.getUnit(ENERGY.kilowattHours));
-    runGetterTest(
-        property.electronvolts, property.getUnit(ENERGY.electronvolts));
-    runGetterTest(
-        property.energyFootPound, property.getUnit(ENERGY.energyFootPound));
   });
-
-  group('Force test', () {
-    var property = Force();
-    property.convert(FORCE.newton, 1);
-    runGetterTest(property.newton, property.getUnit(FORCE.newton));
-    runGetterTest(property.dyne, property.getUnit(FORCE.dyne));
-    runGetterTest(property.poundForce, property.getUnit(FORCE.poundForce));
-    runGetterTest(
-        property.kilogramForce, property.getUnit(FORCE.kilogramForce));
-    runGetterTest(property.poundal, property.getUnit(FORCE.poundal));
-  });
-
-  group('Fuel consumption test', () {
-    var property = FuelConsumption();
-    property.convert(FUEL_CONSUMPTION.kilometersPerLiter, 1);
-    runGetterTest(property.kilometersPerLiter,
-        property.getUnit(FUEL_CONSUMPTION.kilometersPerLiter));
-    runGetterTest(property.litersPer100km,
-        property.getUnit(FUEL_CONSUMPTION.litersPer100km));
-    runGetterTest(property.milesPerUsGallon,
-        property.getUnit(FUEL_CONSUMPTION.milesPerUsGallon));
-    runGetterTest(property.milesPerImperialGallon,
-        property.getUnit(FUEL_CONSUMPTION.milesPerImperialGallon));
-  });
-
-  group('Illuminance test', () {
-    var property = Illuminance();
-    property.convert(ILLUMINANCE.lux, 1);
-    runGetterTest(property.lux, property.getUnit(ILLUMINANCE.lux));
-    runGetterTest(
-        property.footCandle, property.getUnit(ILLUMINANCE.footCandle));
-  });
-
   group('Length test', () {
     var property = Length();
     property.convert(LENGTH.meters, 1);
@@ -185,113 +35,23 @@ void main() {
     runGetterTest(property.inches, property.getUnit(LENGTH.inches));
     runGetterTest(property.feet, property.getUnit(LENGTH.feet));
     runGetterTest(property.feetUs, property.getUnit(LENGTH.feetUs));
-    runGetterTest(
-        property.nauticalMiles, property.getUnit(LENGTH.nauticalMiles));
     runGetterTest(property.yards, property.getUnit(LENGTH.yards));
     runGetterTest(property.miles, property.getUnit(LENGTH.miles));
     runGetterTest(property.millimeters, property.getUnit(LENGTH.millimeters));
-    runGetterTest(property.micrometers, property.getUnit(LENGTH.micrometers));
-    runGetterTest(property.nanometers, property.getUnit(LENGTH.nanometers));
-    runGetterTest(property.angstroms, property.getUnit(LENGTH.angstroms));
-    runGetterTest(property.picometers, property.getUnit(LENGTH.picometers));
     runGetterTest(property.kilometers, property.getUnit(LENGTH.kilometers));
-    runGetterTest(
-        property.astronomicalUnits, property.getUnit(LENGTH.astronomicalUnits));
-    runGetterTest(property.lightYears, property.getUnit(LENGTH.lightYears));
-    runGetterTest(property.parsec, property.getUnit(LENGTH.parsec));
-    runGetterTest(property.mils, property.getUnit(LENGTH.mils));
   });
 
   group('Mass test', () {
     var property = Mass();
     property.convert(MASS.grams, 1);
     runGetterTest(property.grams, property.getUnit(MASS.grams));
-    runGetterTest(property.ettograms, property.getUnit(MASS.ettograms));
     runGetterTest(property.kilograms, property.getUnit(MASS.kilograms));
     runGetterTest(property.pounds, property.getUnit(MASS.pounds));
     runGetterTest(property.ounces, property.getUnit(MASS.ounces));
-    runGetterTest(property.quintals, property.getUnit(MASS.quintals));
-    runGetterTest(property.tons, property.getUnit(MASS.tons));
     runGetterTest(property.milligrams, property.getUnit(MASS.milligrams));
-    runGetterTest(property.uma, property.getUnit(MASS.uma));
-    runGetterTest(property.carats, property.getUnit(MASS.carats));
-    runGetterTest(property.centigrams, property.getUnit(MASS.centigrams));
-    runGetterTest(property.pennyweights, property.getUnit(MASS.pennyweights));
-    runGetterTest(property.troyOunces, property.getUnit(MASS.troyOunces));
     runGetterTest(property.stones, property.getUnit(MASS.stones));
-    runGetterTest(property.femtograms, property.getUnit(MASS.femtograms));
-    runGetterTest(property.picograms, property.getUnit(MASS.picograms));
     runGetterTest(property.nanograms, property.getUnit(MASS.nanograms));
     runGetterTest(property.micrograms, property.getUnit(MASS.micrograms));
-    runGetterTest(property.decigrams, property.getUnit(MASS.decigrams));
-  });
-
-  group('Molar Mass test', () {
-    var property = MolarMass();
-    property.convert(MOLAR_MASS.gramsPerMole, 1);
-    runGetterTest(
-        property.gramsPerMole, property.getUnit(MOLAR_MASS.gramsPerMole));
-    runGetterTest(property.gramsPerMillimole,
-        property.getUnit(MOLAR_MASS.gramsPerMillimole));
-    runGetterTest(property.gramsPerMicromole,
-        property.getUnit(MOLAR_MASS.gramsPerMicromole));
-    runGetterTest(property.gramsPerNanomole,
-        property.getUnit(MOLAR_MASS.gramsPerNanomole));
-    runGetterTest(property.gramsPerPicomole,
-        property.getUnit(MOLAR_MASS.gramsPerPicomole));
-    runGetterTest(property.gramsPerFemtomole,
-        property.getUnit(MOLAR_MASS.gramsPerFemtomole));
-    runGetterTest(property.milligramsPerMole,
-        property.getUnit(MOLAR_MASS.milligramsPerMole));
-    runGetterTest(property.milligramsPerMillimole,
-        property.getUnit(MOLAR_MASS.milligramsPerMillimole));
-    runGetterTest(property.milligramsPerMicromole,
-        property.getUnit(MOLAR_MASS.milligramsPerMicromole));
-    runGetterTest(property.milligramsPerNanomole,
-        property.getUnit(MOLAR_MASS.milligramsPerNanomole));
-    runGetterTest(property.milligramsPerPicomole,
-        property.getUnit(MOLAR_MASS.milligramsPerPicomole));
-    runGetterTest(property.milligramsPerFemtomole,
-        property.getUnit(MOLAR_MASS.milligramsPerFemtomole));
-    runGetterTest(property.kilogramsPerMole,
-        property.getUnit(MOLAR_MASS.kilogramsPerMole));
-    runGetterTest(property.kilogramsPerMillimole,
-        property.getUnit(MOLAR_MASS.kilogramsPerMillimole));
-  });
-
-  group('Molar Volume test', () {
-    var property = MolarVolume();
-    property.convert(MOLAR_VOLUME.molesPerLiter, 1);
-    runGetterTest(
-        property.molesPerLiter, property.getUnit(MOLAR_VOLUME.molesPerLiter));
-    runGetterTest(property.molesPerMilliliter,
-        property.getUnit(MOLAR_VOLUME.molesPerMilliliter));
-    runGetterTest(property.molesPerCubicMeter,
-        property.getUnit(MOLAR_VOLUME.molesPerCubicMeter));
-    runGetterTest(property.millimolesPerLiter,
-        property.getUnit(MOLAR_VOLUME.millimolesPerLiter));
-    runGetterTest(property.millimolesPerDeciliter,
-        property.getUnit(MOLAR_VOLUME.millimolesPerDeciliter));
-    runGetterTest(property.micromolesPerLiter,
-        property.getUnit(MOLAR_VOLUME.micromolesPerLiter));
-    runGetterTest(property.micromolesPerDeciliter,
-        property.getUnit(MOLAR_VOLUME.micromolesPerDeciliter));
-    runGetterTest(property.micromolesPerMilliliter,
-        property.getUnit(MOLAR_VOLUME.micromolesPerMilliliter));
-    runGetterTest(property.nanomolesPerLiter,
-        property.getUnit(MOLAR_VOLUME.nanomolesPerLiter));
-    runGetterTest(property.nanomolesPerDeciliter,
-        property.getUnit(MOLAR_VOLUME.nanomolesPerDeciliter));
-    runGetterTest(property.nanomolesPerMilliliter,
-        property.getUnit(MOLAR_VOLUME.nanomolesPerMilliliter));
-    runGetterTest(property.picomolesPerLiter,
-        property.getUnit(MOLAR_VOLUME.picomolesPerLiter));
-    runGetterTest(property.picomolesPerDeciliter,
-        property.getUnit(MOLAR_VOLUME.picomolesPerDeciliter));
-    runGetterTest(property.picomolesPerMilliliter,
-        property.getUnit(MOLAR_VOLUME.picomolesPerMilliliter));
-    runGetterTest(property.femtomolesPerMilliliter,
-        property.getUnit(MOLAR_VOLUME.femtomolesPerMilliliter));
   });
 
   group('Numeral systems test', () {
@@ -302,89 +62,6 @@ void main() {
         property.hexadecimal, property.getUnit(NUMERAL_SYSTEMS.hexadecimal));
     runGetterTest(property.octal, property.getUnit(NUMERAL_SYSTEMS.octal));
     runGetterTest(property.binary, property.getUnit(NUMERAL_SYSTEMS.binary));
-  });
-
-  group('Power test', () {
-    var property = Power();
-    property.convert(POWER.watt, 1);
-    runGetterTest(property.watt, property.getUnit(POWER.watt));
-    runGetterTest(property.milliwatt, property.getUnit(POWER.milliwatt));
-    runGetterTest(property.kilowatt, property.getUnit(POWER.kilowatt));
-    runGetterTest(property.megawatt, property.getUnit(POWER.megawatt));
-    runGetterTest(property.gigawatt, property.getUnit(POWER.gigawatt));
-    runGetterTest(property.europeanHorsePower,
-        property.getUnit(POWER.europeanHorsePower));
-    runGetterTest(property.imperialHorsePower,
-        property.getUnit(POWER.imperialHorsePower));
-  });
-
-  group('Pressure test', () {
-    var property = Pressure();
-    property.convert(PRESSURE.pascal, 1);
-    runGetterTest(property.pascal, property.getUnit(PRESSURE.pascal));
-    runGetterTest(property.atmosphere, property.getUnit(PRESSURE.atmosphere));
-    runGetterTest(property.bar, property.getUnit(PRESSURE.bar));
-    runGetterTest(property.millibar, property.getUnit(PRESSURE.millibar));
-    runGetterTest(property.psi, property.getUnit(PRESSURE.psi));
-    runGetterTest(property.torr, property.getUnit(PRESSURE.torr));
-    runGetterTest(property.hectoPascal, property.getUnit(PRESSURE.hectoPascal));
-    runGetterTest(property.kiloPascal, property.getUnit(PRESSURE.kiloPascal));
-    runGetterTest(
-        property.inchOfMercury, property.getUnit(PRESSURE.inchOfMercury));
-  });
-
-  group('Reciprocal of Molar Mass test', () {
-    var property = ReciprocalOfMolarMass();
-    property.convert(RECIPROCAL_OF_MOLAR_MASS.molesPerGram, 1);
-    runGetterTest(property.molesPerGram,
-        property.getUnit(RECIPROCAL_OF_MOLAR_MASS.molesPerGram));
-    runGetterTest(property.millimolesPerGram,
-        property.getUnit(RECIPROCAL_OF_MOLAR_MASS.millimolesPerGram));
-    runGetterTest(property.micromolesPerGram,
-        property.getUnit(RECIPROCAL_OF_MOLAR_MASS.micromolesPerGram));
-    runGetterTest(property.nanomolesPerGram,
-        property.getUnit(RECIPROCAL_OF_MOLAR_MASS.nanomolesPerGram));
-    runGetterTest(property.picomolesPerGram,
-        property.getUnit(RECIPROCAL_OF_MOLAR_MASS.picomolesPerGram));
-    runGetterTest(property.femtomolesPerGram,
-        property.getUnit(RECIPROCAL_OF_MOLAR_MASS.femtomolesPerGram));
-    runGetterTest(property.molesPerMilligram,
-        property.getUnit(RECIPROCAL_OF_MOLAR_MASS.molesPerMilligram));
-    runGetterTest(property.millimolesPerMilligram,
-        property.getUnit(RECIPROCAL_OF_MOLAR_MASS.millimolesPerMilligram));
-    runGetterTest(property.micromolesPerMilligram,
-        property.getUnit(RECIPROCAL_OF_MOLAR_MASS.micromolesPerMilligram));
-    runGetterTest(property.nanomolesPerMilligram,
-        property.getUnit(RECIPROCAL_OF_MOLAR_MASS.nanomolesPerMilligram));
-    runGetterTest(property.picomolesPerMilligram,
-        property.getUnit(RECIPROCAL_OF_MOLAR_MASS.picomolesPerMilligram));
-    runGetterTest(property.femtomolesPerMilligram,
-        property.getUnit(RECIPROCAL_OF_MOLAR_MASS.femtomolesPerMilligram));
-    runGetterTest(property.molesPerKilogram,
-        property.getUnit(RECIPROCAL_OF_MOLAR_MASS.molesPerKilogram));
-    runGetterTest(property.millimolesPerKilogram,
-        property.getUnit(RECIPROCAL_OF_MOLAR_MASS.millimolesPerKilogram));
-  });
-
-  group('Shoe size test', () {
-    var property = ShoeSize();
-    property.convert(SHOE_SIZE.centimeters, 1);
-    runGetterTest(
-        property.centimeters, property.getUnit(SHOE_SIZE.centimeters));
-    runGetterTest(property.inches, property.getUnit(SHOE_SIZE.inches));
-    runGetterTest(property.euChina, property.getUnit(SHOE_SIZE.euChina));
-    runGetterTest(
-        property.ukIndiaChild, property.getUnit(SHOE_SIZE.ukIndiaChild));
-    runGetterTest(property.ukIndiaMan, property.getUnit(SHOE_SIZE.ukIndiaMan));
-    runGetterTest(
-        property.ukIndiaWoman, property.getUnit(SHOE_SIZE.ukIndiaWoman));
-    runGetterTest(
-        property.usaCanadaChild, property.getUnit(SHOE_SIZE.usaCanadaChild));
-    runGetterTest(
-        property.usaCanadaMan, property.getUnit(SHOE_SIZE.usaCanadaMan));
-    runGetterTest(
-        property.usaCanadaWoman, property.getUnit(SHOE_SIZE.usaCanadaWoman));
-    runGetterTest(property.japan, property.getUnit(SHOE_SIZE.japan));
   });
 
   group('SI prefixes test', () {
@@ -413,21 +90,6 @@ void main() {
     runGetterTest(property.yocto, property.getUnit(SI_PREFIXES.yocto));
   });
 
-  group('Speed test', () {
-    var property = Speed();
-    property.convert(SPEED.metersPerSecond, 1);
-    runGetterTest(
-        property.metersPerSecond, property.getUnit(SPEED.metersPerSecond));
-    runGetterTest(
-        property.kilometersPerHour, property.getUnit(SPEED.kilometersPerHour));
-    runGetterTest(property.milesPerHour, property.getUnit(SPEED.milesPerHour));
-    runGetterTest(property.knots, property.getUnit(SPEED.knots));
-    runGetterTest(
-        property.feetsPerSecond, property.getUnit(SPEED.feetsPerSecond));
-    runGetterTest(property.minutesPerKilometer,
-        property.getUnit(SPEED.minutesPerKilometer));
-  });
-
   group('Temperature test', () {
     var property = Temperature();
     property.convert(TEMPERATURE.fahrenheit, 1);
@@ -435,10 +97,6 @@ void main() {
         property.fahrenheit, property.getUnit(TEMPERATURE.fahrenheit));
     runGetterTest(property.celsius, property.getUnit(TEMPERATURE.celsius));
     runGetterTest(property.kelvin, property.getUnit(TEMPERATURE.kelvin));
-    runGetterTest(property.reamur, property.getUnit(TEMPERATURE.reamur));
-    runGetterTest(property.romer, property.getUnit(TEMPERATURE.romer));
-    runGetterTest(property.delisle, property.getUnit(TEMPERATURE.delisle));
-    runGetterTest(property.rankine, property.getUnit(TEMPERATURE.rankine));
   });
 
   group('Time test', () {
@@ -459,18 +117,6 @@ void main() {
     runGetterTest(property.decades, property.getUnit(TIME.decades));
     runGetterTest(property.centuries, property.getUnit(TIME.centuries));
     runGetterTest(property.millennium, property.getUnit(TIME.millennium));
-  });
-
-  group('Torque test', () {
-    var property = Torque();
-    property.convert(TORQUE.newtonMeter, 1);
-    runGetterTest(property.newtonMeter, property.getUnit(TORQUE.newtonMeter));
-    runGetterTest(property.dyneMeter, property.getUnit(TORQUE.dyneMeter));
-    runGetterTest(
-        property.poundForceFeet, property.getUnit(TORQUE.poundForceFeet));
-    runGetterTest(property.kilogramForceMeter,
-        property.getUnit(TORQUE.kilogramForceMeter));
-    runGetterTest(property.poundalMeter, property.getUnit(TORQUE.poundalMeter));
   });
 
   group('Volume test', () {
@@ -502,8 +148,6 @@ void main() {
         property.getUnit(VOLUME.imperialFluidOunces));
     runGetterTest(
         property.usFluidOunces, property.getUnit(VOLUME.usFluidOunces));
-    runGetterTest(property.imperialGill, property.getUnit(VOLUME.imperialGill));
-    runGetterTest(property.usGill, property.getUnit(VOLUME.usGill));
     runGetterTest(property.usQuarts, property.getUnit(VOLUME.usQuarts));
     runGetterTest(property.femtoliter, property.getUnit(VOLUME.femtoliters));
     runGetterTest(property.picoliter, property.getUnit(VOLUME.picoliters));

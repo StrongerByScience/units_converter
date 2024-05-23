@@ -22,8 +22,6 @@ enum VOLUME {
   cubicMillimeters,
   imperialFluidOunces,
   usFluidOunces,
-  imperialGill,
-  usGill,
   usQuarts,
   femtoliters,
   picoliters,
@@ -65,13 +63,7 @@ class Volume extends DoubleProperty<VOLUME> {
             VOLUME.cubicMillimeters: 'mm³',
             VOLUME.imperialFluidOunces: 'imp fl oz',
             VOLUME.usFluidOunces: 'US fl oz',
-            VOLUME.imperialGill: 'Imp. gi.',
-            VOLUME.usGill: 'US. liq. gi',
             VOLUME.usQuarts: 'US. liq. qt',
-            VOLUME.femtoliters: 'fl',
-            VOLUME.picoliters: 'pl',
-            VOLUME.nanoliters: 'nl',
-            VOLUME.microliters: 'µl',
             VOLUME.deciliters: 'dl',
             VOLUME.centiliters: 'cl',
           },
@@ -99,10 +91,6 @@ class Volume extends DoubleProperty<VOLUME> {
                       ConversionNode(
                         coefficientProduct: 1 / 20,
                         name: VOLUME.imperialFluidOunces,
-                        children: [
-                          ConversionNode(
-                              coefficientProduct: 5, name: VOLUME.imperialGill),
-                        ],
                       ),
                     ],
                   ),
@@ -113,12 +101,6 @@ class Volume extends DoubleProperty<VOLUME> {
                       ConversionNode(
                         coefficientProduct: 1 / 16,
                         name: VOLUME.usFluidOunces,
-                        children: [
-                          ConversionNode(
-                            coefficientProduct: 4,
-                            name: VOLUME.usGill,
-                          ),
-                        ],
                       ),
                       ConversionNode(
                         coefficientProduct: 2,
@@ -206,8 +188,6 @@ class Volume extends DoubleProperty<VOLUME> {
   Unit get cubicMillimeters => getUnit(VOLUME.cubicMillimeters);
   Unit get imperialFluidOunces => getUnit(VOLUME.imperialFluidOunces);
   Unit get usFluidOunces => getUnit(VOLUME.usFluidOunces);
-  Unit get imperialGill => getUnit(VOLUME.imperialGill);
-  Unit get usGill => getUnit(VOLUME.usGill);
   Unit get usQuarts => getUnit(VOLUME.usQuarts);
   Unit get femtoliter => getUnit(VOLUME.femtoliters);
   Unit get picoliter => getUnit(VOLUME.picoliters);

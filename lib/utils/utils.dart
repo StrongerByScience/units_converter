@@ -1,53 +1,21 @@
 import 'dart:math';
 import 'package:units_converter/models/property.dart';
-import 'package:units_converter/properties/amount_of_substance.dart';
-import 'package:units_converter/properties/illuminance.dart';
 import 'package:units_converter/properties/length.dart';
-import 'package:units_converter/properties/area.dart';
-import 'package:units_converter/properties/molar_mass.dart';
-import 'package:units_converter/properties/molar_volume.dart';
-import 'package:units_converter/properties/reciprocal_of_molar_mass.dart';
 import 'package:units_converter/properties/volume.dart';
 import 'package:units_converter/properties/time.dart';
 import 'package:units_converter/properties/temperature.dart';
-import 'package:units_converter/properties/speed.dart';
-import 'package:units_converter/properties/si_prefixes.dart';
 import 'package:units_converter/properties/mass.dart';
-import 'package:units_converter/properties/pressure.dart';
 import 'package:units_converter/properties/energy.dart';
-import 'package:units_converter/properties/angle.dart';
-import 'package:units_converter/properties/power.dart';
-import 'package:units_converter/properties/force.dart';
-import 'package:units_converter/properties/torque.dart';
-import 'package:units_converter/properties/fuel_consumption.dart';
-import 'package:units_converter/properties/digital_data.dart';
-import 'package:units_converter/properties/shoe_size.dart';
 import 'package:units_converter/properties/density.dart';
 
 Property? getPropertyFromEnum(dynamic propertyEnum) {
   return switch (propertyEnum.runtimeType) {
-    const (AMOUNT_OF_SUBSTANCE) => AmountOfSubstance(),
-    const (ANGLE) => Angle(),
-    const (AREA) => Area(),
     const (DENSITY) => Density(),
-    const (DIGITAL_DATA) => DigitalData(),
     const (ENERGY) => Energy(),
-    const (FORCE) => Force(),
-    const (FUEL_CONSUMPTION) => FuelConsumption(),
-    const (ILLUMINANCE) => Illuminance(),
     const (LENGTH) => Length(),
     const (MASS) => Mass(),
-    const (MOLAR_MASS) => MolarMass(),
-    const (MOLAR_VOLUME) => MolarVolume(),
-    const (POWER) => Power(),
-    const (PRESSURE) => Pressure(),
-    const (RECIPROCAL_OF_MOLAR_MASS) => ReciprocalOfMolarMass(),
-    const (SHOE_SIZE) => ShoeSize(),
-    const (SI_PREFIXES) => SIPrefixes(),
-    const (SPEED) => Speed(),
     const (TEMPERATURE) => Temperature(),
     const (TIME) => Time(),
-    const (TORQUE) => Torque(),
     const (VOLUME) => Volume(),
     _ => () {
         assert(false, "${propertyEnum.runtimeType} is not a valid enum type");

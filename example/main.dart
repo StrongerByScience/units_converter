@@ -17,21 +17,6 @@ void main() {
 
   //----------------------------------------------------------------------------
 
-  //example 3: convert 1 degree in all the other angle units
-  var angle = Angle(
-      significantFigures: 7,
-      removeTrailingZeros:
-          false); //this time let's also keep 7 significant figures
-  angle.convert(ANGLE.degree, 1); //We give 1 meter as input
-  var units = angle.getAll(); //We get all the others units
-  for (var unit in units) {
-    //Let's print them
-    print(
-        'name:${unit.name}, value:${unit.value}, stringValue:${unit.stringValue}, symbol:${unit.symbol}');
-  }
-
-  //----------------------------------------------------------------------------
-
   //example 4: convert 100 (decimal) in binary and hexadecimal
   var numeralSystems = NumeralSystems(); //initialize NumeralSystems object
   numeralSystems.convert(
@@ -111,6 +96,4 @@ void main() {
     print(
         'name:${unit.name}, value:${unit.value}, stringValue:${unit.stringValue}, symbol:${unit.symbol}');
   }
-
-  print(angle.getUnit(ANGLE.radians).value);
 }
